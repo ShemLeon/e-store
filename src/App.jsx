@@ -25,7 +25,7 @@ const productData = [
   },
 ];
 
-function App() {
+export function App() {
   return (
     <div>
       <Header />
@@ -36,7 +36,7 @@ function App() {
   );
 }
 
-function Header() {
+export function Header() {
   //  const hours = new Date().getHours();
   const hour = 8;
   console.log(hour);
