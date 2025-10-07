@@ -1,13 +1,6 @@
 import React from "react";
 import "./index.css";
 
-const Ololo = "ololo";
-if (Ololo === "ololo") {
-  console.log("ololo");
-} else {
-  console.log("not ololo");
-}
-
 const productData = [
   {
     name: "Laptop Pro",
@@ -95,14 +88,20 @@ function Catalog() {
   return (
     <main className="catalog">
       <ul className="products">
-        <Product />
+        <Product
+          name="Laptop Pro"
+          img="/laptop.png"
+          price="1200"
+          description="High-performance laptop for professionals"
+        />
       </ul>
     </main>
   );
 }
 
-function Product() {
-  const products = [...productData];
+function Product(props) {
+  console.log(props);
+  const products = [...productData]; // deep copy of the array
 
   return (
     <li className="product">
