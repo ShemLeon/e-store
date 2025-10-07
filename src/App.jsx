@@ -30,7 +30,6 @@ export function App() {
     <div>
       <Header />
       <Catalog />
-      <Product />
       <Footer />
     </div>
   );
@@ -42,7 +41,6 @@ export function Header() {
   console.log(hour);
   const openHours = 9;
   const closeHours = 21;
-
   const isOpen = hour >= openHours && hour <= closeHours;
 
   return (
@@ -94,6 +92,12 @@ function Catalog() {
           price="1200"
           description="High-performance laptop for professionals"
         />
+        <Product
+          name="Smartphone X"
+          img="/smartphone.png"
+          price="800"
+          description="Latest model with stunning display"
+        />
       </ul>
     </main>
   );
@@ -101,15 +105,13 @@ function Catalog() {
 
 function Product(props) {
   console.log(props);
-  const products = [...productData]; // deep copy of the array
-
   return (
     <li className="product">
-      <img src={products[1].photoName} alt=""></img>
+      <img src={props.img} alt={props.name}></img>
       <div>
-        <h3>{products.name}</h3>
-        <p>{products[1].description}</p>
-        <span>{products[1].price}</span>
+        <h3>{props.name}</h3>
+        <p>{props.description}</p>
+        <span>{props.price}</span>
       </div>
     </li>
   );
