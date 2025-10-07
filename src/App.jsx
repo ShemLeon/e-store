@@ -1,6 +1,13 @@
 import React from "react";
 import "./index.css";
 
+const Ololo = "ololo";
+if (Ololo === "ololo") {
+  console.log("ololo");
+} else {
+  console.log("not ololo");
+}
+
 const productData = [
   {
     name: "Laptop Pro",
