@@ -89,13 +89,13 @@ function Catalog() {
         <Product
           name="Laptop Pro"
           img="/laptop.png"
-          price="1200"
+          price={1200}
           description="High-performance laptop for professionals"
         />
         <Product
           name="Smartphone X"
           img="/smartphone.png"
-          price="800"
+          price={800}
           description="Latest model with stunning display"
         />
       </ul>
@@ -111,7 +111,7 @@ function Product(props) {
       <div>
         <h3>{props.name}</h3>
         <p>{props.description}</p>
-        <span>{props.price}</span>
+        <span>{props.price + 1}</span>
       </div>
     </li>
   );
