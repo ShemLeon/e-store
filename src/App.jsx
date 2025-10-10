@@ -23,6 +23,27 @@ const productData = [
     photoName: "/headphones.png",
     soldOut: false,
   },
+  {
+    name: "Laptop Pro",
+    description: "High-performance laptop for professionals.",
+    price: 1200,
+    photoName: "/laptop.png",
+    soldOut: false,
+  },
+  {
+    name: "Smartphone X",
+    description: "Latest model with stunning display.",
+    price: 800,
+    photoName: "/smartphone.png",
+    soldOut: false,
+  },
+  {
+    name: "Wireless Headphones",
+    description: "Noise-cancelling headphones with great sound quality.",
+    price: 200,
+    photoName: "/headphones.png",
+    soldOut: false,
+  },
 ];
 
 export function App() {
@@ -86,18 +107,9 @@ function Catalog() {
   return (
     <main className="catalog">
       <ul className="products">
-        <Product
-          name="Laptop Pro"
-          img="/laptop.png"
-          price={1200}
-          description="High-performance laptop for professionals"
-        />
-        <Product
-          name="Smartphone X"
-          img="/smartphone.png"
-          price={800}
-          description="Latest model with stunning display"
-        />
+        {productData.map((item) => (
+          <Product productObj={item} />
+        ))}
       </ul>
     </main>
   );
@@ -105,13 +117,14 @@ function Catalog() {
 
 function Product(props) {
   console.log(props);
+
   return (
     <li className="product">
-      <img src={props.img} alt={props.name}></img>
+      <img src={props.productObj.photoName} alt={props.productObj.name}></img>
       <div>
-        <h3>{props.name}</h3>
-        <p>{props.description}</p>
-        <span>{props.price + 1}</span>
+        <h3>{props.productObj.name}</h3>
+        <p>{props.productObj.description}</p>
+        <span>{props.productObj.price + 1}</span>
       </div>
     </li>
   );
