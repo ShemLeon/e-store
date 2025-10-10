@@ -24,17 +24,17 @@ const productData = [
     soldOut: false,
   },
   {
-    name: "Laptop Pro",
-    description: "High-performance laptop for professionals.",
+    name: "SmartWatch",
+    description: "SmartWatch for professionals.",
     price: 1200,
-    photoName: "/laptop.png",
-    soldOut: false,
+    photoName: "/smartwatch.png",
+    soldOut: true,
   },
   {
-    name: "Smartphone X",
-    description: "Latest model with stunning display.",
-    price: 800,
-    photoName: "/smartphone.png",
+    name: "4K TV",
+    description: "Ultra HD televisions with vibrant colors.",
+    price: 400,
+    photoName: "/tv.png",
     soldOut: false,
   },
   {
@@ -48,11 +48,11 @@ const productData = [
 
 export function App() {
   return (
-    <div>
+    <>
       <Header />
       <Catalog />
       <Footer />
-    </div>
+    </>
   );
 }
 
@@ -116,11 +116,7 @@ function Catalog() {
 }
 
 function Product({ productObj }) {
-  // console.log({ props });
-
-  // const { productObj } = props;
-  // console.log(productObj);
-
+  if (productObj.soldOut) return null;
   return (
     <li className="product">
       <img src={productObj.photoName} alt={productObj.name}></img>
