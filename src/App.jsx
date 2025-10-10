@@ -115,16 +115,19 @@ function Catalog() {
   );
 }
 
-function Product(props) {
-  console.log(props);
+function Product({ productObj }) {
+  // console.log({ props });
+
+  // const { productObj } = props;
+  // console.log(productObj);
 
   return (
     <li className="product">
-      <img src={props.productObj.photoName} alt={props.productObj.name}></img>
+      <img src={productObj.photoName} alt={productObj.name}></img>
       <div>
-        <h3>{props.productObj.name}</h3>
-        <p>{props.productObj.description}</p>
-        <span>{props.productObj.price + 1}</span>
+        <h3>{productObj.name}</h3>
+        <p>{productObj.description}</p>
+        <span>{productObj.price + 1}</span>
       </div>
     </li>
   );
